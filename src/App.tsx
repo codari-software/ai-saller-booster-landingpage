@@ -3,6 +3,7 @@ import HeroSection from "./sections/HeroSection.js";
 import ProblemSection from "./sections/ProblemSection.js";
 import PromiseSection from "./sections/PromiseSetion.js";
 import TestimonialsSection from "./sections/TestimonialsSection.js";
+import VideoSection from "./sections/VideoSection.js";
 
 export function App() {
   return (
@@ -12,6 +13,7 @@ export function App() {
       <TestimonialsSection />
       <ProblemSection />
       <PromiseSection />
+      <VideoSection />
     </div>
   );
 }
