@@ -1,0 +1,18 @@
+.hero-bg {
+  background: radial-gradient(
+      141.42% 141.42% at 0% 0%,
+      #100f15 0%,
+      rgba(16, 15, 21, 0) 50%
+    ),
+    radial-gradient(
+      141.42% 70.71% at 50% 0%,
+      #2f3e6a 0%,
+      rgba(47, 62, 106, 0) 50%
+    ),
+    radial-gradient(
+      141.42% 141.42% at 100% 0%,
+      #722741 0%,
+      rgba(114, 39, 65, 0) 50%
+    ),
+    #0f172a;
+}

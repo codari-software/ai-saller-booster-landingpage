@@ -1,0 +1,26 @@
+
+{
+
+  "compilerOptions": {
+
+    "jsx": "react-jsx",
+
+    "target": "ES2020",
+
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+
+    "module": "nodenext",
+
+    "skipLibCheck": true,
+
+    "esModuleInterop": true,
+
+
+  },
+
+  "include": ["src"],
+
+  "references": [{ "path": "./tsconfig.node.json" }]
+
+}
+
