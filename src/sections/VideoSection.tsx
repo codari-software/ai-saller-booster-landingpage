@@ -7,7 +7,7 @@ const VideoSection = () => {
       <h2 className="text-center text-slate-900 text-4xl font-black pb-[16px]">
         Pare de Ler. Veja a IA em Ação.
       </h2>
-      <p className="text-center text-slate-600 text-xl border-2 w-[55%] m-auto pb-[16px]">
+      <p className="text-center text-slate-600 text-xl border-2 w-[55%] m-auto pb-[16px] max-md:w-full">
         Em apenas 90 segundos, veja o que a AI Seller Booster gera para você.
       </p>
       <div
