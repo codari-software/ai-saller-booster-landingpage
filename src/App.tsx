@@ -1,4 +1,5 @@
 import TopBanner from "./components/TopBanner.js";
+import BeforeAfterAISection from "./sections/BeforeAfterAISection.js";
 import FeaturesSection from "./sections/FeaturesSection.js";
 import HeroSection from "./sections/HeroSection.js";
 import ProblemSection from "./sections/ProblemSection.js";
@@ -18,6 +19,7 @@ export function App() {
       <VideoSection />
       <TutorialSection />
       <FeaturesSection />
+      <BeforeAfterAISection />
     </div>
   );
 }
