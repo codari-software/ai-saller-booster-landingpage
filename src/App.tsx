@@ -1,4 +1,5 @@
 import TopBanner from "./components/TopBanner.js";
+import FeaturesSection from "./sections/FeaturesSection.js";
 import HeroSection from "./sections/HeroSection.js";
 import ProblemSection from "./sections/ProblemSection.js";
 import PromiseSection from "./sections/PromiseSetion.js";
@@ -16,6 +17,7 @@ export function App() {
       <PromiseSection />
       <VideoSection />
       <TutorialSection />
+      <FeaturesSection />
     </div>
   );
 }
