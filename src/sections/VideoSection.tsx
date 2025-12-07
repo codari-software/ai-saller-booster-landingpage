@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { FaPlay, FaExpand, FaFire } from "react-icons/fa";
 import { FaVolumeHigh } from "react-icons/fa6";
-import VSL from "../assets/VSL.mp4";
 import PosterVSL from "../assets/poster-vsl.png";
 
 const VideoSection = () => {
@@ -39,11 +38,10 @@ const VideoSection = () => {
     const playerContainer = document.getElementById("custom-player-container") as HTMLDivElement;
     const videoPauseOverlay = document.getElementById("video-pause-overlay") as HTMLDivElement;
     const pausePlayBtn = document.getElementById("pause-play-btn") as HTMLButtonElement;
-    let previousVolume = 1; // Guarda o volume anterior ao mutar
+    let previousVolume = 1;
 
     if (!video) return;
 
-    // ===== FORMATTER =====
     const formatTime = (seconds: number) => {
       if (!seconds || isNaN(seconds)) return "0:00";
       const mins = Math.floor(seconds / 60);
@@ -51,7 +49,6 @@ const VideoSection = () => {
       return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
     };
 
-    // ===== FUNÇÃO PARA ATUALIZAR SLIDER VISUAL =====
     const updateSliderBackground = () => {
       if (!volumeSlider) return;
       const value = parseFloat(volumeSlider.value);
@@ -59,7 +56,6 @@ const VideoSection = () => {
       volumeSlider.style.background = `linear-gradient(to right, #6366f1 0%, #6366f1 ${percentage}%, #475569 ${percentage}%, #475569 100%)`;
     };
 
-    // ===== FUNÇÃO PARA ATUALIZAR ÍCONE DE VOLUME =====
     const updateVolumeIcon = () => {
       if (!volumeIcon) return;
       
@@ -76,21 +72,19 @@ const VideoSection = () => {
       }
     };
 
-    // ===== CONTROLE DE VOLUME =====
     const handleVolumeChange = () => {
       if (volumeSlider) {
         const newVolume = parseFloat(volumeSlider.value);
         video.volume = newVolume;
         video.muted = false;
-        previousVolume = newVolume > 0 ? newVolume : previousVolume; // Salva apenas se maior que 0
-        updateSliderBackground(); // Atualiza visual em tempo real
+        previousVolume = newVolume > 0 ? newVolume : previousVolume;
+        updateSliderBackground();
         updateVolumeIcon();
       }
     };
 
     const handleMuteToggle = () => {
       if (video.muted) {
-        // Desmutando: restaura o volume anterior
         video.muted = false;
         video.volume = previousVolume;
         if (volumeSlider) {
@@ -98,7 +92,6 @@ const VideoSection = () => {
           updateSliderBackground();
         }
       } else {
-        // Mutando: salva o volume atual
         previousVolume = video.volume > 0 ? video.volume : 1;
         video.muted = true;
       }
@@ -113,15 +106,12 @@ const VideoSection = () => {
       muteBtn.addEventListener("click", handleMuteToggle);
     }
 
-    // ===== FULLSCREEN =====
     const handleFullscreen = () => {
       if (!document.fullscreenElement) {
-        // Entra em tela cheia
         if (playerContainer.requestFullscreen) {
           playerContainer.requestFullscreen();
         }
       } else {
-        // Sai da tela cheia
         if (document.exitFullscreen) {
           document.exitFullscreen();
         }
@@ -132,11 +122,9 @@ const VideoSection = () => {
       fullscreenBtn.addEventListener("click", handleFullscreen);
     }
 
-    // ===== CLIQUE NO VÍDEO PARA PAUSAR/PLAY =====
     let clickTimeout: ReturnType<typeof setTimeout> | null = null;
     
     const handleVideoClick = () => {
-      // Cancela se for duplo clique
       if (clickTimeout) {
         clearTimeout(clickTimeout);
         clickTimeout = null;
@@ -163,7 +151,6 @@ const VideoSection = () => {
 
     video.addEventListener("click", handleVideoClick);
 
-    // ===== DUPLO CLIQUE PARA TELA CHEIA =====
     video.addEventListener("dblclick", () => {
       if (clickTimeout) {
         clearTimeout(clickTimeout);
@@ -172,7 +159,6 @@ const VideoSection = () => {
       handleFullscreen();
     });
 
-    // ===== BOTÃO GRANDE DE PLAY NO OVERLAY =====
     const handlePausePlayBtn = () => {
       video.play();
       if (videoPauseOverlay) {
@@ -185,10 +171,8 @@ const VideoSection = () => {
       pausePlayBtn.addEventListener("click", handlePausePlayBtn);
     }
 
-    // ===== INICIALIZA O SLIDER VISUAL =====
     updateSliderBackground();
 
-    // ===== FUNÇÃO PARA ATUALIZAR ÍCONE =====
     const updatePlayPauseIcon = () => {
       if (playPause) {
         playPause.innerHTML = video.paused 
@@ -197,7 +181,6 @@ const VideoSection = () => {
       }
     };
 
-    // ===== DESATIVA ARRASTAR DA BARRA =====
     if (progressContainer) {
       progressContainer.style.pointerEvents = "none";
       progressContainer.style.cursor = "default";
@@ -206,19 +189,15 @@ const VideoSection = () => {
       progressHandle.style.pointerEvents = "none";
     }
 
-    // ===== PLAY AO CLICAR NO BOTÃO INICIAL =====
     const handleInitialPlay = () => {
       video.play();
 
-      // esconde overlay
       overlay.style.opacity = "0";
       overlay.style.pointerEvents = "none";
 
-      // mostra controles
       controls.style.opacity = "1";
       controls.style.pointerEvents = "auto";
 
-      // ATUALIZA O ÍCONE
       updatePlayPauseIcon();
     };
 
@@ -226,7 +205,6 @@ const VideoSection = () => {
       initialBtn.addEventListener("click", handleInitialPlay);
     }
 
-    // ===== PLAY/PAUSE NO BOTÃO DO PLAYER =====
     const handlePlayPause = () => {
       if (video.paused) {
         video.play();
@@ -239,10 +217,8 @@ const VideoSection = () => {
       playPause.addEventListener("click", handlePlayPause);
     }
 
-    // ===== ATUALIZA ÍCONE QUANDO O VÍDEO TOCA/PAUSA =====
     const handlePlay = () => {
       updatePlayPauseIcon();
-      // Esconde o overlay quando o vídeo tocar
       if (videoPauseOverlay) {
         videoPauseOverlay.style.opacity = "0";
         videoPauseOverlay.style.pointerEvents = "none";
@@ -251,7 +227,6 @@ const VideoSection = () => {
     
     const handlePause = () => {
       updatePlayPauseIcon();
-      // Mostra o overlay quando o vídeo pausar (exceto no início)
       if (videoPauseOverlay && controls.style.opacity === "1") {
         videoPauseOverlay.style.opacity = "1";
         videoPauseOverlay.style.pointerEvents = "auto";
@@ -261,7 +236,6 @@ const VideoSection = () => {
     video.addEventListener("play", handlePlay);
     video.addEventListener("pause", handlePause);
 
-    // ===== ATUALIZA A BARRA DE PROGRESSO =====
     const handleTimeUpdate = () => {
       if (!video.duration) return;
 
@@ -280,7 +254,6 @@ const VideoSection = () => {
 
     video.addEventListener("timeupdate", handleTimeUpdate);
 
-    // ===== CLEANUP =====
     return () => {
       initialBtn?.removeEventListener("click", handleInitialPlay);
       playPause?.removeEventListener("click", handlePlayPause);
