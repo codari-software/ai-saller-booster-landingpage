@@ -1,6 +1,7 @@
 import TopBanner from "./components/TopBanner.js";
 import BeforeAfterAISection from "./sections/BeforeAfterAISection.js";
 import CooldownSection from "./sections/CooldownSection.js";
+import FAQSection from "./sections/FAQSection.js";
 import FeaturesSection from "./sections/FeaturesSection.js";
 import GarantiaSection from "./sections/GarantiaSection.js";
 import HeroSection from "./sections/HeroSection.js";
@@ -30,6 +31,7 @@ export function App() {
       <CooldownSection />
       <GarantiaSection />
       <HistorySection />
+      <FAQSection />
     </div>
   );
 }
