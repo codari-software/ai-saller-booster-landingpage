@@ -1,32 +1,48 @@
 import TutorialCard from "../components/TutorialCard.js";
-import { FaArrowRight } from "react-icons/fa";
+import { FaChevronRight } from "react-icons/fa";
 
 const TutorialSection = () => {
   return (
-    <section className="bg-slate-900 py-[80px] px-[16px]">
-      <h2 className="text-center text-4xl font-bold text-white">Veja como é simples (e por que todos usam)</h2>
-      <div className="flex items-center gap-[32px] pt-[48px] max-lg:flex-col">
-        <TutorialCard step={1} title="Escolha o Negócio">
-          Ex: Barbearia, estética, loja de roupas, serviços...
-        </TutorialCard>
+    <section id="demo" className="py-20 bg-slate-900 text-white">
+      <div className="max-w-6xl mx-auto px-4 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-12">
+          Veja como é simples (e por que todos usam)
+        </h2>
 
-        <FaArrowRight className="text-slate-600 text-base font-black max-lg:hidden" />
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="relative">
+            <TutorialCard step={1} title="Escolha o Negócio">
+              Ex: Barbearia, estética, loja de roupas, serviços...
+            </TutorialCard>
+            <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 text-slate-600 z-10">
+              <FaChevronRight />
+            </div>
+          </div>
 
-        <TutorialCard step={2} title="Escolha o Tom">
-          "Mais sério", "Mais engraçado", "Agressivo de vendas"
-        </TutorialCard>
+          <div className="relative">
+            <TutorialCard step={2} title="Escolha o Tom">
+              "Mais sério", "Mais engraçado", "Agressivo de vendas"
+            </TutorialCard>
+            <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 text-slate-600 z-10">
+              <FaChevronRight />
+            </div>
+          </div>
 
-        <FaArrowRight className="text-slate-600 text-base font-black max-lg:hidden"  />
+          <div className="relative">
+            <TutorialCard step={3} title="Clique em Gerar">
+              A IA cria toda a estratégia e textos em segundos.
+            </TutorialCard>
+            <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 text-slate-600 z-10">
+              <FaChevronRight />
+            </div>
+          </div>
 
-        <TutorialCard step={3} title="Clique em Gerar">
-          A IA cria toda a estratégia e textos em segundos.
-        </TutorialCard>
-
-        <FaArrowRight className="text-slate-600 text-base font-black max-lg:hidden"  />
-
-        <TutorialCard step={4} title="Copie e Venda">
-          Apenas cole no WhatsApp ou Instagram e lucre.
-        </TutorialCard>
+          <div className="relative">
+            <TutorialCard step={4} title="Copie e Venda">
+              Apenas cole no WhatsApp ou Instagram e lucre.
+            </TutorialCard>
+          </div>
+        </div>
       </div>
     </section>
   );

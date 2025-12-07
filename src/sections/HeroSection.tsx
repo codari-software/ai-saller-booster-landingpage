@@ -1,4 +1,3 @@
-import ButtonComponent from "../components/ButtonComponent.js";
 import "../styles/hero.css";
 import { FaRobot, FaArrowDown } from "react-icons/fa";
 
@@ -23,15 +22,25 @@ const HeroSection = () => {
         A plataforma definitiva para dobrar vendas no WhatsApp e Instagram —
         mesmo sem tempo, sem saber copy e sem experiência.
       </p>
-      <ButtonComponent>
-        <p className="text-xl font-bold leading-[28px]">
-          Quero dobrar minhas vendas
-        </p>
-        <p className="text-sm font-normal">Começar por R$ 29/mês</p>
-      </ButtonComponent>
+      <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+        <a
+          href="#planos"
+          className="bg-green-500 hover:bg-green-600 text-white font-bold py-5 px-10 rounded-xl text-xl transition transform hover:scale-105 shadow-lg shadow-green-500/30 w-full md:w-auto"
+        >
+          Quero dobrar minhas vendas <br />
+          <span className="text-sm font-normal opacity-90">
+            Começar por R$ 29/mês
+          </span>
+        </a>
+      </div>
       <div className="flex items-center gap-[4px] text-slate-400 text-sm leading-[20px] underline decoration-solid pt-[23.5px] pb-[96px]">
-        <p className="cursor-pointer">Ver exemplos gerados pela IA</p>
-        <FaArrowDown />
+        <a
+          href="#demo"
+          className="text-slate-400 hover:text-white underline text-sm transition flex items-center gap-[8px]"
+        >
+          Ver exemplos gerados pela IA
+          <FaArrowDown />
+        </a>
       </div>
     </section>
   );
