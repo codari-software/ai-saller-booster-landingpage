@@ -2,6 +2,7 @@ import TopBanner from "./components/TopBanner.js";
 import BeforeAfterAISection from "./sections/BeforeAfterAISection.js";
 import CooldownSection from "./sections/CooldownSection.js";
 import FeaturesSection from "./sections/FeaturesSection.js";
+import GarantiaSection from "./sections/GarantiaSection.js";
 import HeroSection from "./sections/HeroSection.js";
 import PlansSection from "./sections/PlansSection.js";
 import ProblemSection from "./sections/ProblemSection.js";
@@ -26,6 +27,7 @@ export function App() {
       <BeforeAfterAISection />
       <PlansSection />
       <CooldownSection />
+      <GarantiaSection />
     </div>
   );
 }
