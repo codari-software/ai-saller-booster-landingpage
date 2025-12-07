@@ -20,7 +20,7 @@ const PlansSection = () => {
               "Respostas prontas",
               "10 anúncios/mês",
               "10 conteúdos/mês",
-              "Acesso imediato",
+              "Acesso antecipado",
             ]}
             button="Testar Agora"
             type="normal"

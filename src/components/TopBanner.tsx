@@ -6,7 +6,7 @@ const TopBanner = () => {
       <div className="flex items-center gap-[16px]">
         <IoIosWarning className="text-yellow-600 text-3xl font-black" />
         <p className="text-yellow-900 text-sm font-bold leading-[20px]">
-          ATENÇÃO: Vagas controladas para manter a qualidade da IA.
+          ATENÇÃO: Acesso Antecipado com Vagas Limitadas
         </p>
       </div>
       <div className="w-[40%]">
