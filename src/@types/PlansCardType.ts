@@ -4,6 +4,7 @@ export interface PlansCardType {
     features: string[];
     button: string;
     type: "normal" | "highlighted";
+    link: string;
     children: React.ReactNode;
     textColor?: string;
     buttonType?: "normal" | "background";

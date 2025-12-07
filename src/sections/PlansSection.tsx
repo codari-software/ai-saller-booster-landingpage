@@ -1,3 +1,4 @@
+/// <reference types="vite/client" />
 import PlansCard from "../components/PlansCard.js";
 
 const PlansSection = () => {
@@ -24,6 +25,7 @@ const PlansSection = () => {
             button="Testar Agora"
             type="normal"
             textColor="text-slate-300"
+            link={import.meta.env.VITE_KIWIFY_START}
           >
             Para quem quer começar gastando pouco.
           </PlansCard>
@@ -40,6 +42,7 @@ const PlansSection = () => {
             ]}
             button="Quero Este Plano"
             type="highlighted"
+            link={import.meta.env.VITE_KIWIFY_PRO}
           >
             O melhor custo-benefício para crescer.
           </PlansCard>
@@ -57,6 +60,7 @@ const PlansSection = () => {
             button="Dominar Mercado"
             type="normal"
             textColor="text-amber-400"
+            link={import.meta.env.VITE_KIWIFY_TURBO}
           >
             Para dominar o mercado.
           </PlansCard>
