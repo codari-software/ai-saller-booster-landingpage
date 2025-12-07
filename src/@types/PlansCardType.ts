@@ -6,4 +6,5 @@ export interface PlansCardType {
     type: "normal" | "highlighted";
     children: React.ReactNode;
     textColor?: string;
+    buttonType?: "normal" | "background";
 }
