@@ -15,7 +15,7 @@ const FooterSection = () => {
         </a>
 
         <div className="mt-12 text-slate-600 text-sm">
-          &copy; 2023 Codari Software. Todos os direitos reservados. <br />
+          &copy; 2025 Codari Software. Todos os direitos reservados. <br />
           <span className="opacity-50">Tecnologia proprietária.</span>
         </div>
       </div>
