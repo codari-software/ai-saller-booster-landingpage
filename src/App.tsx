@@ -4,6 +4,7 @@ import CooldownSection from "./sections/CooldownSection.js";
 import FeaturesSection from "./sections/FeaturesSection.js";
 import GarantiaSection from "./sections/GarantiaSection.js";
 import HeroSection from "./sections/HeroSection.js";
+import HistorySection from "./sections/HistorySection.js";
 import PlansSection from "./sections/PlansSection.js";
 import ProblemSection from "./sections/ProblemSection.js";
 import PromiseSection from "./sections/PromiseSetion.js";
@@ -28,6 +29,7 @@ export function App() {
       <PlansSection />
       <CooldownSection />
       <GarantiaSection />
+      <HistorySection />
     </div>
   );
 }
