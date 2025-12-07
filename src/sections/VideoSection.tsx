@@ -1,7 +1,8 @@
 import { useEffect } from "react";
-import { FaPlay, FaPause, FaExpand, FaFire } from "react-icons/fa";
+import { FaPlay, FaExpand, FaFire } from "react-icons/fa";
 import { FaVolumeHigh } from "react-icons/fa6";
 import VSL from "../assets/VSL.mp4";
+import PosterVSL from "../assets/poster-vsl.png";
 
 const VideoSection = () => {
   useEffect(() => {
@@ -312,10 +313,10 @@ const VideoSection = () => {
         <video
           id="product-vsl"
           className="absolute top-0 left-0 w-full h-full object-cover"
-          poster="SEU_LINK_PARA_IMAGEM_DE_CAPA_DO_VIDEO.jpg"
+          poster={PosterVSL}
           preload="metadata"
         >
-          <source src={VSL} type="video/mp4" />
+          <source src="https://pub-77a7e0f3a60245f984952cae6b9a190f.r2.dev/VSL.mp4" type="video/mp4" />
           Seu navegador não suporta a tag de vídeo.
         </video>
 
