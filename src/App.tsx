@@ -1,5 +1,6 @@
 import TopBanner from "./components/TopBanner.js";
 import BeforeAfterAISection from "./sections/BeforeAfterAISection.js";
+import CooldownSection from "./sections/CooldownSection.js";
 import FeaturesSection from "./sections/FeaturesSection.js";
 import HeroSection from "./sections/HeroSection.js";
 import PlansSection from "./sections/PlansSection.js";
@@ -24,6 +25,7 @@ export function App() {
       <FeaturesSection />
       <BeforeAfterAISection />
       <PlansSection />
+      <CooldownSection />
     </div>
   );
 }
