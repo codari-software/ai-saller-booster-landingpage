@@ -16,6 +16,7 @@ const PlansSection = () => {
           <PlansCard
             title="Start"
             price={29}
+            oldPrice={39}
             features={[
               "Respostas prontas",
               "10 anúncios/mês",
@@ -33,6 +34,7 @@ const PlansSection = () => {
           <PlansCard
             title="PRO"
             price={59}
+            oldPrice={79}
             features={[
               "Tudo do Start",
               "Anúncios Ilimitados",
@@ -50,6 +52,7 @@ const PlansSection = () => {
           <PlansCard
             title="Turbo"
             price={99}
+            oldPrice={129}
             features={[
               "Tudo do PRO",
               "Mini CRM IA (Heatmap)",

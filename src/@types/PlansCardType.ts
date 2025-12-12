@@ -8,4 +8,5 @@ export interface PlansCardType {
     children: React.ReactNode;
     textColor?: string;
     buttonType?: "normal" | "background";
+    oldPrice?: number;
 }
